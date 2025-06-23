@@ -9,11 +9,13 @@ Clean architecture with dependency injection using get_it.
 
 # Installation
 1. Add the package to your pubspec.yaml:
+```bash
 dependencies:
   notification_history:
     path: /path/to/notification_history # For local development
-    # Or use: git: https://github.com/yourusername/notification_history.git
-    # Or use: version: ^1.0.0 (after publishing to pub.dev)
+    # Or use: git: https://github.com/AlbertStany/PushNotificationHistoryPackageFlutter
+    # Or use: version: ^1.0.2
+```
 
 2. Run flutter pub get.
 
@@ -22,9 +24,13 @@ dependencies:
 1. Configure Firebase:
 
 Add google-services.json to android/app/ and GoogleService-Info.plist to ios/Runner/.
-Initialize Firebase in your app:await Firebase.initializeApp();
+Initialize Firebase in your app:
+```bash
+await Firebase.initializeApp();
+```
 
 2. Set Up Dependency Injection:
+```bash
 import 'package:get_it/get_it.dart';
 import 'package:notification_history/notification_history.dart';
 
@@ -46,9 +52,10 @@ void setupDI() {
     ),
   );
 }
-
+```
 
 3. Initialize Notifications:
+```bash
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -56,9 +63,10 @@ void main() async {
   await getIt<NotificationHandler>().initialize();
   runApp(MyApp());
 }
-
+```
 
 4. Display Notification History:
+```bash
 Navigator.push(
   context,
   MaterialPageRoute(
@@ -70,30 +78,34 @@ Navigator.push(
     ),
   ),
 );
-
+```
 
 5. Show a Local Notification:
+```bash
 getIt<NotificationHandler>().showNotification(
   'Test Title',
   'Test Body',
   payload: 'test_payload',
 );
-
-
+```
 
 6. Android Configuration
 
-Add to android/app/src/main/AndroidManifest.xml:<application ...>
+Add to android/app/src/main/AndroidManifest.xml:
+```bash
+<application ...>
     <meta-data
         android:name="com.google.firebase.messaging.default_notification_channel_id"
         android:value="your_channel_id" />
 </application>
+```
 
-
-Add to android/app/src/main/res/values/strings.xml:<resources>
+Add to android/app/src/main/res/values/strings.xml:
+```bash
+<resources>
     <string name="default_notification_channel_name">Your Channel Name</string>
 </resources>
-
+```
 
 7. iOS Configuration
 

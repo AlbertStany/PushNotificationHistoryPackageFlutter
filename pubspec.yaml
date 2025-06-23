@@ -1,9 +1,9 @@
 name: notification_history
 description: "A Flutter package to manage and display the history of notifications received by the app, including Firebase Cloud Messaging (FCM) notifications.This package provides a local database to store notifications and a UI to display them, making it easy."
-version: 1.0.1
-homepage: http://gitlab.seqato.com/albert.stany/inapphistorypackage
-repository: http://gitlab.seqato.com/albert.stany/inapphistorypackage
-issue_tracker: http://gitlab.seqato.com/albert.stany/inapphistorypackage/-/issues
+version: 1.0.2
+homepage: https://github.com/AlbertStany/PushNotificationHistoryPackageFlutter
+repository: https://github.com/AlbertStany/PushNotificationHistoryPackageFlutter
+issue_tracker: https://github.com/AlbertStany/PushNotificationHistoryPackageFlutter/issues
 license: MIT
 
 environment:
